@@ -7,17 +7,17 @@ We will creat a machine learning pipeline to categorize these messages and sent 
 ## Data
 https://www.figure-eight.com/
 The files we will use:
- 1.disaster_categories.csv
- 2.disaster_messages.csv
+ 1. disaster_categories.csv
+ 2. disaster_messages.csv
 
 ## Library
 
-1.Numpy and pandas
-2. sqlalchemy
-3. nltk
-4. sklearn
-5. sys
-6. re
+1. Numpy and pandas
+2.  sqlalchemy
+3.  nltk
+4.  sklearn
+5.  sys
+6.  re
 
 
 ## Code files
