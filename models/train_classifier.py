@@ -15,6 +15,8 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.metrics import accuracy_score
 from sklearn.externals import joblib
+from sklearn.metrics import classification_report
+
 
 
 
@@ -57,13 +59,17 @@ def tokenize(text):
 
 def build_model():
     '''create a model pipeline'''
-    model = Pipeline([
+    pipeline = Pipeline([
         ('vect',CountVectorizer(tokenizer=tokenize)),
         ('tfidf',TfidfTransformer()),
         ('clf',MultiOutputClassifier(MLPClassifier(),n_jobs=-1))
     ])
     
-    return model
+    # use gridsearch to find better parameters
+    parameters = {'vect__max_df': (0.5, 1.0)}
+    cv = GridSearchCV(pipeline, param_grid=parameters,n_jobs=-1,cv=2)
+
+    return cv
     
 
 
