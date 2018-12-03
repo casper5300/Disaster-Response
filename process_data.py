@@ -8,7 +8,7 @@ def load_data(messages_filepath, categories_filepath):
     '''load two cvs files and return a merge dataframe'''
     message = pd.read_csv(messages_filepath,low_memory=False)
     categories = pd.read_csv(categories_filepath,low_memory=False)
-    df = pd.merge(messages,categories,on='id')
+    df = pd.merge(message,categories,on='id')
     
     return df
 
@@ -37,8 +37,8 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
-    engine = create_engine('sqlite:///InsertDatabaseName.db')
-    df.to_sql('InsertTableName',engine,index=False)
+    engine = create_engine('sqlite:///../data/clean_data.db')
+    df.to_sql('clean_data',engine,index=False)
 
 
 def main():
