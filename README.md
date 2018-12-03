@@ -6,6 +6,7 @@ We will creat a machine learning pipeline to categorize these messages and sent 
 
 ## Data
 https://www.figure-eight.com/
+
 The files we will use:
  1. disaster_categories.csv
  2. disaster_messages.csv
